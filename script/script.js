@@ -54,6 +54,8 @@ const app = Vue.createApp ({
 
         // Add task
         addTask () {
+            // Stop function with newTask empty
+            if(!this.newTask.length) return;
             // Starting task undone and create object
             baseTask = { done: false }
 
