@@ -46,6 +46,21 @@ const app = Vue.createApp ({
         }
     },
 
+
+    computed: {
+        nextId () {
+            let highestId = 0;
+            this.tasks.forEach((task) => {
+                if (task.id > highestId) {
+                    highestId = task.id
+                }
+            });
+
+            const nextId = ++highestId;
+            return nextId
+        }
+    },
+
     methods: {
         // Delete task with button x
        deleteTask (currentId) {
@@ -60,7 +75,7 @@ const app = Vue.createApp ({
             if(!this.newTask.length) return;
 
             // Starting task undone and create object
-            baseTask = { done: false }
+            baseTask = { done: false, id: this.nextId, }
 
             // Add user text to object
             baseTask.text = this.newTask
