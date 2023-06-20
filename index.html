@@ -27,11 +27,15 @@
             <li v-for="(task, i) in tasks" class="list-group-item d-flex justify-content-between"
             :class="{'text-decoration-line-through': task.done}"> {{ task.text }}
                 <i @click="deleteTask(i)" class="fa-solid fa-x"></i>   
-            </li>
-            
-            
-           
+            </li>         
         </ul>
+        <div class="w-50 mx-auto mt-5">
+            <label for="add-task">Scrivi una task da aggiungere alla lista</label>
+            <div class="d-flex align-items-center justify-content-between" >
+                <input id="add-task" class="w-75" type="text">
+                <button class="btn btn-success">Aggiungi task</button>
+            </div>
+        </div>
     </div>
     
 </body>
