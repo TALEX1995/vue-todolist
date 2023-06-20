@@ -56,10 +56,18 @@ const app = Vue.createApp ({
         addTask () {
             // Starting task undone and create object
             baseTask = { done: false }
+
             // Add user text to object
             baseTask.text = this.newTask
+
             // Push into tasks Array
             this.tasks.push(baseTask)
+
+            // Let new task empty
+            this.newTask = ''
+
+            // Focus on input
+            this.$refs.task.focus();
         }
         
     }
