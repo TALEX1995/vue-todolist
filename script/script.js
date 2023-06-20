@@ -5,6 +5,7 @@ console.log('JS OK', Vue)
 const app = Vue.createApp ({
     data: () => {
         return {
+            newTask: '',
             tasks: [
                 {
                     id: 1,
@@ -46,10 +47,24 @@ const app = Vue.createApp ({
     },
 
     methods: {
+        // Delete task with button x
        deleteTask (index) {
         this.tasks.splice(index, 1)
-       }
+       },
+
+        // Add task
+        addTask () {
+            // Starting task undone and create object
+            baseTask = { done: false }
+            // Add user text to object
+            baseTask.text = this.newTask
+            // Push into tasks Array
+            this.tasks.push(baseTask)
+        }
+        
     }
+
+
 
     
 });
