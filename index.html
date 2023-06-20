@@ -32,7 +32,7 @@
         <div class="w-50 mx-auto mt-5">
             <label for="add-task">Scrivi una task da aggiungere alla lista</label>
             <div class="d-flex align-items-center justify-content-between" >
-                <input v-model="newTask" id="add-task" class="w-75" type="text" ref="task">
+                <input v-model="newTask" id="add-task" class="w-75" type="text" ref="task"  @keyup.enter="addTask">
                 <button @click="addTask" class="btn btn-success">Aggiungi task</button>
             </div>
         </div>
