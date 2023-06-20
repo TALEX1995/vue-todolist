@@ -88,7 +88,15 @@ const app = Vue.createApp ({
 
             // Focus on input
             this.$refs.task.focus();
-        }
+        },
+
+        toggleDoneTask (currentId) {
+            this.tasks.forEach((task) => {
+                if (task.id === currentId) {
+                    task.done = !task.done
+                }
+            })
+        },
         
     }
 
