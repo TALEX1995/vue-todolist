@@ -24,7 +24,14 @@
     <div id="root">
         <h1 class="w-50 text-center mx-auto mt-5">To Do List</h1>
         <ul class="list-group w-50 mx-auto mt-5">
-            <li class="list-group-item">An item</li>
+            <li v-if="done" v-for="task in tasks" class="list-group-item"> {{ task.text }}
+                <i @click="" class="fa-solid fa-x"></i>   
+            </li>
+            <li v-else v-for="task in tasks" class="list-group-item text-decoration-line-through"> {{ task.text }}
+                <i @click="" class="fa-solid fa-x"></i>   
+            </li>
+            
+           
         </ul>
     </div>
     
