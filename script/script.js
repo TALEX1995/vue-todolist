@@ -48,14 +48,17 @@ const app = Vue.createApp ({
 
     methods: {
         // Delete task with button x
-       deleteTask (index) {
-        this.tasks.splice(index, 1)
+       deleteTask (currentId) {
+        this.tasks = this.tasks.filter(task => {
+            return currentId !== task.id
+        })
        },
 
         // Add task
         addTask () {
             // Stop function with newTask empty
             if(!this.newTask.length) return;
+
             // Starting task undone and create object
             baseTask = { done: false }
 
